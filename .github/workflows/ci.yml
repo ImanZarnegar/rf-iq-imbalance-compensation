@@ -1,0 +1,9 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  octave:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run tests in GNU Octave
+        run: docker run --rm -v "$PWD":/w -w /w gnuoctave/octave:9.2.0 octave --no-gui --eval "addpath('tests'); run_tests"

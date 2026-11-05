@@ -1,0 +1,6 @@
+*.asv
+*.autosave
+*.m~
+octave-workspace
+.DS_Store
+.agent/
